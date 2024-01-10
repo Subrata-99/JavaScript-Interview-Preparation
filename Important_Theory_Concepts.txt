@@ -1,0 +1,40 @@
+1.What is Hoisting ?
+
+    - Hoisting is a javascript default behaviour of moving declarations to the top.
+    Declarations can be both variable and function.
+
+    -Whenever we write code in js, js engine executes that. So, before executing code, js interpreter assumes all the variable and function declarations in the code (be it anywhere in the code) are on top of the program.
+    This by default assumption behaviour is known as Hoisting.
+
+    *Note: Interpreter only assumes declarations not initalization.
+    eg: console.log(a)
+        var a = 5
+    Here, it only assumes declaration not the initialization so value 5 will not be considered.
+
+    **Hoisting for let and const works differently than var and function.
+    -Memory that assigns to var variables are attached to the Global object. So we can access even before declaration.
+    -But in case of let and const, they are also allocated memory which is different than Global object. We can't access this space until and unless declaration is done. 
+    In the very beginning let and const are in Temporal Dead Zone.
+
+    **Temporal Dead Zone: A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+
+2.This Substitution
+
+    console.log(this); //globalObject, i.e, window
+
+    function xyz () {
+        console.log(this); //Depends on strict/ non-strict mode
+        //*while using non-strict mode: this -> globalObject/ Window
+        //*while using strict mode: this -> undefined
+    }
+
+    - In non strict mode, if the value of this keyword is undefined or null, it will be replaced with globalObject/window.
+    This phenomenon in javascript is known as this Substitution
+
+    *this keyword value depends on how function is called
+    eg: if we call the xyz function under strict mode like
+
+    xyz(); //undefined
+    
+    but if we call like,
+    window.xyz(). //globalObject/window

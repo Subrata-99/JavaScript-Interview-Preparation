@@ -1,0 +1,37 @@
+body * {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+}
+
+span {
+  width: 100px;
+  height: 100px;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalContainer {
+  display: none;
+  position: absolute;
+  top: 0;
+  background-color: rgba(221, 221, 221, 0.5);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+}
